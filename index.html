@@ -23,7 +23,8 @@ window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]
 </script>
 <link rel="canonical" href="https://arosegardenafh.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<link rel="preload" as="image" href="images/home1-foyer.webp" fetchpriority="high">
+<link rel="preload" as="image" href="images/home1-foyer-mobile.webp" media="(max-width:900px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/home1-foyer.webp" media="(min-width:901px)" fetchpriority="high">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
@@ -177,7 +178,7 @@ a:hover{color:var(--pine);}
       </div>
     </div>
     <div class="r-hero-photo" style="position:relative;aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 50px rgba(35,58,49,.18);border:5px solid var(--white);">
-      <img fetchpriority="high" src="images/home1-foyer.webp" alt="The entry foyer at A Rose Garden, a warm two-story space with a wood front door, a curved staircase, hardwood floors, and a chandelier in soft daylight" style="width:100%;height:100%;object-fit:cover;">
+      <picture><source media="(max-width:900px)" srcset="images/home1-foyer-mobile.webp"><img fetchpriority="high" src="images/home1-foyer.webp" alt="The entry foyer at A Rose Garden, a warm two-story space with a wood front door, a curved staircase, hardwood floors, and a chandelier in soft daylight" style="width:100%;height:100%;object-fit:cover;"></picture>
       <span style="position:absolute;top:16px;right:16px;width:66px;height:66px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(35,58,49,.18);"><img width="46" height="46" src="images/logo-mark.webp" alt="" style="width:46px;height:46px;object-fit:contain;"></span>
     </div>
   </div>
