@@ -400,8 +400,6 @@ a:hover{color:var(--pine);}
 
 <script>
 
-var SB="https://kficcgswkkprnyvuxqsx.supabase.co";
-var ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtmaWNjZ3N3a2twcm55dnV4cXN4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA5NjU0MjUsImV4cCI6MjA5NjU0MTQyNX0.uMHqNV4IAWv1WVJTmouqG-Oju5d-hK5sC7RmYEdqRDM";
 var nav=document.getElementById('rgNav');
 function onScroll(){ if(nav) nav.classList.toggle('scrolled', window.scrollY>8); }
 window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
@@ -428,9 +426,7 @@ if(form) form.addEventListener('submit',function(e){
   if(!n||!p){ alert('Please add your name and phone so we can call you back.'); return; }
   var r=form.querySelector('input[name="whichHome"]:checked'); var home=r?r.getAttribute('data-home'):'either';
   var label=home==='home1'?'Home 1 on 33rd Dr SE':home==='home2'?'Home 2 on 26th Ave SE':'our Mill Creek homes';
-  var payload={family_name:n,phone:p,email:em,location_pref:label,notes:'Website inquiry (A Rose Garden) - '+label+(msg?' - '+msg:''),source:'website-inquiry',route:'arosegarden',status:'new'};
-  fetch(SB+'/rest/v1/leads',{method:'POST',headers:{apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(payload)}).catch(function(){});
-  fetch('https://formsubmit.co/ajax/hello@arosegardenafh.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({_subject:'New website inquiry - A Rose Garden ('+label+')',Name:n,Phone:p,Email:em||'(none)',Home:label,Message:msg||'(none)'})}).catch(function(){});
+  fetch('https://formsubmit.co/ajax/hello@arosegardenafh.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({_subject:'New website inquiry - A Rose Garden ('+label+')',_cc:'henosadhana@gmail.com',_template:'table',Name:n,Phone:p,Email:em||'(none)',Home:label,Message:msg||'(none)'})}).catch(function(){});
   var tn=document.getElementById('tyName'); if(tn) tn.textContent=n.split(' ')[0];
   var th=document.getElementById('tyHome'); if(th) th.textContent=label;
   document.getElementById('formWrap').style.display='none';
