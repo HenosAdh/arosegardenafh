@@ -429,7 +429,7 @@ if(form) form.addEventListener('submit',function(e){
   if(!n||!p){ alert('Please add your name and phone so we can call you back.'); return; }
   var r=form.querySelector('input[name="whichHome"]:checked'); var home=r?r.getAttribute('data-home'):'either';
   var label=home==='home1'?'Home 1 on 33rd Dr SE':home==='home2'?'Home 2 on 26th Ave SE':'our Mill Creek homes';
-  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'23c9ae7c-0a48-4d14-bd6f-3ca5f0cf0e4f',subject:'New website inquiry - A Rose Garden ('+label+')',from_name:'A Rose Garden Website',replyto:em||'',ccemail:'hello@arosegardenafh.com',Name:n,Phone:p,Email:em||'(none)','Which Home':label,Message:msg||'(none)'})}).catch(function(){});
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'23c9ae7c-0a48-4d14-bd6f-3ca5f0cf0e4f',subject:'New website inquiry - A Rose Garden ('+label+')',from_name:'A Rose Garden Website',replyto:em||'',ccemail:'hello@arosegardenafh.com,henosadhana@gmail.com',Name:n,Phone:p,Email:em||'(none)','Which Home':label,Message:msg||'(none)'})}).catch(function(){});
   var tn=document.getElementById('tyName'); if(tn) tn.textContent=n.split(' ')[0];
   var th=document.getElementById('tyHome'); if(th) th.textContent=label;
   document.getElementById('formWrap').style.display='none';
