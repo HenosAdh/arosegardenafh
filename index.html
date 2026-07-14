@@ -3,28 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TSFTPD9T');</script>
-<!-- End Google Tag Manager -->
-<!-- Google tag (gtag.js) — GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3C3YKE2RCZ"></script>
+<!-- Analytics: events queue immediately; the heavy scripts load AFTER first render (off the critical path). -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3C3YKE2RCZ');
-</script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xmg93922kb");
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config','G-3C3YKE2RCZ');
+window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
+(function(){
+  function load(){
+    var g=document.createElement('script'); g.async=1;
+    g.src='https://www.googletagmanager.com/gtag/js?id=G-3C3YKE2RCZ'; document.head.appendChild(g);
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TSFTPD9T');
+    var c=document.createElement('script'); c.async=1;
+    c.src='https://www.clarity.ms/tag/xmg93922kb'; document.head.appendChild(c);
+  }
+  var fire=function(){ ('requestIdleCallback' in window)?requestIdleCallback(load,{timeout:3000}):setTimeout(load,1500); };
+  if(document.readyState==='complete') fire(); else window.addEventListener('load', fire);
+})();
 </script>
 <link rel="canonical" href="https://arosegardenafh.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -43,7 +42,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image" content="https://arosegardenafh.com/images/home1-foyer.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&amp;display=swap"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"A Rose Garden Adult Family Home","description":"Family-owned licensed adult family home in Mill Creek, WA providing compassionate 24-hour dementia, memory, and personal care. Home 1.","telephone":"+12064993840","image":"images/home1-exterior.webp","priceRange":"Private pay and Washington Medicaid","url":"https://dearcarehome.com/wa/snohomish/mill-creek/a-rose-garden-adult-family-home-755035/","identifier":"WA DSHS License 755035","areaServed":"Mill Creek, Snohomish County, WA","address":{"@type":"PostalAddress","streetAddress":"15309 33rd Dr SE","addressLocality":"Mill Creek","addressRegion":"WA","postalCode":"98012","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":47.856,"longitude":-122.195}}
 </script>
@@ -132,7 +132,7 @@ a:hover{color:var(--pine);}
 
         <span style="display:flex;flex-direction:column;line-height:1;">
           <span style="font-family:var(--f-serif);font-weight:600;font-size:1.1rem;color:var(--pine);letter-spacing:-.01em;">A Rose Garden</span>
-          <span style="font-family:var(--f-sans);font-weight:700;font-size:.56rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-top:.22rem;">Adult Family Home</span>
+          <span style="font-family:var(--f-sans);font-weight:700;font-size:.56rem;letter-spacing:.2em;color:var(--moss);text-transform:uppercase;margin-top:.22rem;">Adult Family Home</span>
         </span>
       </a>
       <nav id="navLinks" class="r-nav-links" aria-label="Primary" style="display:flex;align-items:center;gap:1.5rem;">
