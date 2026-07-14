@@ -76,6 +76,18 @@ a:hover{color:var(--pine);}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}.rg-marquee-track{animation:none!important;}}
 /* balance the Daily Life cards on desktop: 5 cards -> 3 on top, 2 centered below (no empty cell) */
 @media(min-width:901px){.r-3grid{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:stretch;}.r-3grid>div{flex:0 1 31%;min-width:240px;}}
+#gallery img{cursor:zoom-in;}
+#lb{position:fixed;inset:0;background:rgba(20,28,24,.93);display:none;align-items:center;justify-content:center;z-index:1000;padding:24px;}
+#lb.open{display:flex;}
+#lb #lbImg{max-width:92vw;max-height:82vh;object-fit:contain;border-radius:8px;box-shadow:0 12px 44px rgba(0,0,0,.55);}
+#lb .lb-cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-family:var(--f-sans);font-size:.9rem;text-shadow:0 1px 3px rgba(0,0,0,.6);pointer-events:none;}
+#lb .lb-btn,#lb .lb-close{position:absolute;background:rgba(255,255,255,.14);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;line-height:1;}
+#lb .lb-btn{top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;font-size:2rem;}
+#lb .lb-btn:hover,#lb .lb-close:hover{background:rgba(255,255,255,.3);}
+#lb .lb-prev{left:20px;}
+#lb .lb-next{right:20px;}
+#lb .lb-close{top:18px;right:20px;width:44px;height:44px;border-radius:50%;font-size:1.6rem;}
+@media(max-width:600px){#lb .lb-btn{width:42px;height:42px;font-size:1.6rem;}#lb .lb-prev{left:8px;}#lb .lb-next{right:8px;}}
 </style>
 
 </head>
@@ -211,7 +223,7 @@ a:hover{color:var(--pine);}
         <div style="padding:1.7rem;">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.5rem;">
             <h3 style="font-family:var(--f-serif);color:var(--ink);font-weight:600;font-size:1.6rem;">Home 1</h3>
-            <span style="font-size:.72rem;font-weight:700;color:var(--pine);background:var(--sage-soft);padding:.35rem .7rem;border-radius:100px;white-space:nowrap;">DSHS 755035</span>
+            <a href="https://dearcarehome.com/wa/snohomish/mill-creek/a-rose-garden-adult-family-home-755035/" target="_blank" rel="noopener" title="See this home's Dear Care Home listing" style="font-size:.72rem;font-weight:700;color:var(--pine);background:var(--sage-soft);padding:.35rem .7rem;border-radius:100px;white-space:nowrap;text-decoration:none;">DSHS 755035</a>
           </div>
           <p style="font-size:.96rem;color:var(--body);margin-bottom:.6rem;">15309 33rd Dr SE<br>Mill Creek, WA 98012</p>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=15309+33rd+Dr+SE+Mill+Creek+WA+98012" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;font-weight:700;color:var(--moss);text-decoration:none;margin-bottom:1.3rem;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 15s5-4 5-8A5 5 0 0 0 3 7c0 4 5 8 5 8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><circle cx="8" cy="6.5" r="1.8" stroke="currentColor" stroke-width="1.4"></circle></svg>View on Google Maps</a>
@@ -224,7 +236,7 @@ a:hover{color:var(--pine);}
         <div style="padding:1.7rem;">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.5rem;">
             <h3 style="font-family:var(--f-serif);color:var(--ink);font-weight:600;font-size:1.6rem;">Home 2</h3>
-            <span style="font-size:.72rem;font-weight:700;color:var(--pine);background:var(--sage-soft);padding:.35rem .7rem;border-radius:100px;white-space:nowrap;">DSHS 757836</span>
+            <a href="https://dearcarehome.com/wa/snohomish/mill-creek/a-rose-garden-adult-family-home-757836/" target="_blank" rel="noopener" title="See this home's Dear Care Home listing" style="font-size:.72rem;font-weight:700;color:var(--pine);background:var(--sage-soft);padding:.35rem .7rem;border-radius:100px;white-space:nowrap;text-decoration:none;">DSHS 757836</a>
           </div>
           <p style="font-size:.96rem;color:var(--body);margin-bottom:.6rem;">13821 26th Ave SE<br>Mill Creek, WA 98012</p>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=13821+26th+Ave+SE+Mill+Creek+WA+98012" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;font-weight:700;color:var(--moss);text-decoration:none;margin-bottom:1.3rem;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 15s5-4 5-8A5 5 0 0 0 3 7c0 4 5 8 5 8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path><circle cx="8" cy="6.5" r="1.8" stroke="currentColor" stroke-width="1.4"></circle></svg>View on Google Maps</a>
@@ -397,7 +409,16 @@ a:hover{color:var(--pine);}
     <span>© <span id="tyYear">2026</span> A Rose Garden Adult Family Home. DSHS Licenses 757836 &amp; 755035.</span>
     <span>Licensed by the Washington State Department of Social and Health Services.</span>
   </div>
+  <div style="max-width:var(--max);margin:.9rem auto 0;text-align:center;font-size:.76rem;color:rgba(211,224,201,.5);">Website by <a href="https://fullcensus.org" target="_blank" rel="noopener" data-hover="footlink" style="color:rgba(211,224,201,.82);text-decoration:underline;">Full Census</a></div>
 </footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" type="button" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" type="button" aria-label="Next photo">&#8250;</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
 
 </div>
 
@@ -411,7 +432,7 @@ function setMenu(o){ if(links) links.classList.toggle('open',o); if(toggle) togg
 if(toggle) toggle.addEventListener('click',function(){ setMenu(!(links&&links.classList.contains('open'))); });
 document.querySelectorAll('[data-close-menu]').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
 function pickHome(h){ var id=h==='home1'?'whichHome1':h==='home2'?'whichHome2':'whichHomeEither'; var el=document.getElementById(id); if(el) el.checked=true; }
-document.querySelectorAll('[data-ask]').forEach(function(a){ a.addEventListener('click',function(){ pickHome(a.getAttribute('data-ask')); }); });
+document.querySelectorAll('[data-ask]').forEach(function(a){ a.addEventListener('click',function(){ var h=a.getAttribute('data-ask'); pickHome(h); track('ask_about_home',{home:h}); }); });
 var HOVER={primary:{background:'var(--pine-deep)',transform:'translateY(-2px)'},ghost:{borderColor:'var(--pine)',transform:'translateY(-2px)'},navlink:{color:'var(--pine)'},footlink:{color:'#fff'}};
 document.querySelectorAll('[data-hover]').forEach(function(el){ var h=HOVER[el.getAttribute('data-hover')]||{},s={};
   el.addEventListener('mouseenter',function(){ for(var k in h){ s[k]=el.style[k]; el.style[k]=h[k]; } });
@@ -430,12 +451,37 @@ if(form) form.addEventListener('submit',function(e){
   var r=form.querySelector('input[name="whichHome"]:checked'); var home=r?r.getAttribute('data-home'):'either';
   var label=home==='home1'?'Home 1 on 33rd Dr SE':home==='home2'?'Home 2 on 26th Ave SE':'our Mill Creek homes';
   fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'23c9ae7c-0a48-4d14-bd6f-3ca5f0cf0e4f',subject:'New website inquiry - A Rose Garden ('+label+')',from_name:'A Rose Garden Website',replyto:em||'',Name:n,Phone:p,Email:em||'(none)','Which Home':label,Message:msg||'(none)'})}).catch(function(){});
+  track('generate_lead',{which_home:home, home_label:label});
   var tn=document.getElementById('tyName'); if(tn) tn.textContent=n.split(' ')[0];
   var th=document.getElementById('tyHome'); if(th) th.textContent=label;
   document.getElementById('formWrap').style.display='none';
   document.getElementById('thanksWrap').style.display='';
   document.getElementById('thanksWrap').scrollIntoView({behavior:'smooth',block:'center'});
 });
+
+// Analytics event bridge — no-ops until GA4 / Clarity are installed, then events flow automatically.
+function track(name,params){
+  try{ if(window.gtag) window.gtag('event',name,params||{}); }catch(e){}
+  try{ window.dataLayer=window.dataLayer||[]; window.dataLayer.push(Object.assign({event:name},params||{})); }catch(e){}
+  try{ if(window.clarity) window.clarity('event',name); }catch(e){}
+}
+
+// Gallery lightbox — click to enlarge, arrows/keys to move through.
+(function(){
+  var gal=Array.prototype.slice.call(document.querySelectorAll('#gallery img'));
+  if(!gal.length) return;
+  var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap'), idx=0;
+  function cap(g){ var s=g.parentNode.querySelector('span'); return s?s.textContent:(g.getAttribute('alt')||''); }
+  function show(i){ idx=(i+gal.length)%gal.length; var g=gal[idx]; lbImg.setAttribute('src',g.getAttribute('src')); lbImg.setAttribute('alt',g.getAttribute('alt')||''); lbCap.textContent=cap(g); }
+  function openLb(i){ show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; track('gallery_open',{}); }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  gal.forEach(function(g,i){ g.addEventListener('click',function(){ openLb(i); }); });
+  lb.querySelector('.lb-prev').addEventListener('click',function(e){ e.stopPropagation(); show(idx-1); });
+  lb.querySelector('.lb-next').addEventListener('click',function(e){ e.stopPropagation(); show(idx+1); });
+  lb.querySelector('.lb-close').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){ if(e.target===lb) closeLb(); });
+  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open'))return; if(e.key==='Escape')closeLb(); else if(e.key==='ArrowLeft')show(idx-1); else if(e.key==='ArrowRight')show(idx+1); });
+})();
 
 </script>
 </body>
